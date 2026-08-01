@@ -1,0 +1,13 @@
+specVersion: "4.0"
+metadata:
+  name: com.diogocamargo.servicedesk
+type: application
+framework:
+  name: SAPUI5
+  version: "1.148.6"
+  libraries:
+    - name: sap.ui.core
+    - name: sap.m
+    - name: sap.f
+    - name: sap.ui.layout
+    - name: sap.ui.unified

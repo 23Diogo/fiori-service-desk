@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Service Desk Monitor - Mock Server</title>
+    <script
+      id="sap-ui-bootstrap"
+      src="../resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_horizon"
+      data-sap-ui-resourceroots='{"com.diogocamargo.servicedesk": "../"}'
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-async="true">
+    </script>
+    <script>
+      sap.ui.getCore().attachInit(function () {
+        sap.ui.require([
+          "com.diogocamargo.servicedesk/localService/mockserver",
+          "sap/ui/core/ComponentContainer"
+        ], function (mockserver, ComponentContainer) {
+          mockserver.init();
+          new ComponentContainer({
+            name: "com.diogocamargo.servicedesk",
+            height: "100%"
+          }).placeAt("content");
+        });
+      });
+    </script>
+  </head>
+  <body class="sapUiBody sapUiSizeCompact" id="content"></body>
+</html>

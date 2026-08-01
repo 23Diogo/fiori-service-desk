@@ -1,0 +1,13 @@
+{
+  "name": "fiori-service-desk",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve --open test/mockServer.html",
+    "build": "ui5 build --all",
+    "test": "ui5 serve --open test/unit/unitTests.qunit.html"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^4.0.0"
+  }
+}

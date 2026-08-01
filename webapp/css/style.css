@@ -1,0 +1,16 @@
+.portfolioHeader {
+  padding: 1rem;
+}
+
+.portfolioMetric {
+  min-width: 11rem;
+  margin: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--sapList_BorderColor);
+  border-radius: 0.75rem;
+  background: var(--sapGroup_ContentBackground);
+}
+
+.portfolioMetric .sapMObjectNumberText {
+  font-size: 1.6rem;
+}

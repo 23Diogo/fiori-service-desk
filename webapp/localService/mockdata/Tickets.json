@@ -1,0 +1,32 @@
+[
+  {
+    "TicketId": "INC-2042",
+    "Title": "Orders are not reaching finance",
+    "System": "ERP Integration",
+    "Owner": "Ana Souza",
+    "Priority": "Critical",
+    "Status": "In Progress",
+    "SlaHours": 4,
+    "ElapsedHours": 3
+  },
+  {
+    "TicketId": "INC-2041",
+    "Title": "Dashboard data is outdated",
+    "System": "Analytics",
+    "Owner": "Carlos Lima",
+    "Priority": "High",
+    "Status": "Open",
+    "SlaHours": 8,
+    "ElapsedHours": 10
+  },
+  {
+    "TicketId": "INC-2039",
+    "Title": "New user access",
+    "System": "Portal",
+    "Owner": "Mariana Costa",
+    "Priority": "Medium",
+    "Status": "Resolved",
+    "SlaHours": 16,
+    "ElapsedHours": 5
+  }
+]

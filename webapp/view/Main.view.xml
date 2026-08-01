@@ -1,0 +1,66 @@
+<mvc:View
+  controllerName="com.diogocamargo.servicedesk.controller.Main"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:f="sap.f">
+  <App>
+    <f:DynamicPage>
+      <f:title>
+        <f:DynamicPageTitle>
+          <f:heading>
+            <Title text="Service Desk Monitor"/>
+          </f:heading>
+          <f:expandedContent>
+            <Text text="Operational view of incidents, owners and SLA consumption."/>
+          </f:expandedContent>
+        </f:DynamicPageTitle>
+      </f:title>
+      <f:header>
+        <f:DynamicPageHeader>
+          <SearchField
+            width="100%"
+            liveChange=".onSearch"
+            placeholder="Search ticket, title or system"/>
+        </f:DynamicPageHeader>
+      </f:header>
+      <f:content>
+        <Table
+          id="ticketTable"
+          growing="true"
+          items="{/Tickets}"
+          class="sapUiResponsiveContentPadding">
+          <columns>
+            <Column><Text text="Ticket"/></Column>
+            <Column><Text text="System"/></Column>
+            <Column><Text text="Owner"/></Column>
+            <Column><Text text="Priority"/></Column>
+            <Column><Text text="SLA"/></Column>
+            <Column><Text text="Status"/></Column>
+            <Column hAlign="End"><Text text="Action"/></Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <ObjectIdentifier title="{TicketId}" text="{Title}"/>
+                <Text text="{System}"/>
+                <Text text="{Owner}"/>
+                <ObjectStatus
+                  text="{Priority}"
+                  state="{path: 'Priority', formatter: '.formatter.priorityState'}"/>
+                <ObjectStatus
+                  text="{parts: ['ElapsedHours', 'SlaHours'], formatter: '.formatter.slaText'}"
+                  state="{parts: ['ElapsedHours', 'SlaHours', 'Status'], formatter: '.formatter.slaState'}"/>
+                <Text text="{Status}"/>
+                <Button
+                  text="Resolve"
+                  type="Emphasized"
+                  enabled="{= ${Status} !== 'Resolved' }"
+                  press=".onResolve"/>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </f:content>
+    </f:DynamicPage>
+  </App>
+</mvc:View>

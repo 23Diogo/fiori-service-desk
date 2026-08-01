@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+  xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="2.0"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="ZSERVICE_DESK_SRV"
+      xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="Ticket">
+        <Key><PropertyRef Name="TicketId"/></Key>
+        <Property Name="TicketId" Type="Edm.String" Nullable="false" MaxLength="12"/>
+        <Property Name="Title" Type="Edm.String" MaxLength="120"/>
+        <Property Name="System" Type="Edm.String" MaxLength="40"/>
+        <Property Name="Owner" Type="Edm.String" MaxLength="80"/>
+        <Property Name="Priority" Type="Edm.String" MaxLength="20"/>
+        <Property Name="Status" Type="Edm.String" MaxLength="20"/>
+        <Property Name="SlaHours" Type="Edm.Int32"/>
+        <Property Name="ElapsedHours" Type="Edm.Int32"/>
+      </EntityType>
+      <EntityContainer Name="ZSERVICE_DESK_SRV_Entities"
+        m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Tickets" EntityType="ZSERVICE_DESK_SRV.Ticket"/>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
